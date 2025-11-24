@@ -1,0 +1,44 @@
+@use "../layout/mixins" as *;
+.p-popover {
+  width: fit-content;
+  background: var(--color-bg-white);
+  border-radius: 0.375rem;
+  text-align: start;
+  color: var(--color-dark);
+  box-shadow: none;
+  font-weight: var(--fw_semi);
+  .p-popover-content {
+    // padding: 14px 20px;
+    margin: 0;
+    width: 180px;
+    max-height: 200px;
+    height: 100%;
+    overflow-y: auto;
+
+    .popover-content {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      .popover-Item {
+        @include displayFlex(row, center, start);
+        gap: 10px;
+        padding: 8px;
+        cursor: pointer;
+        transition: var(--transition);
+        word-break: break-word;
+        border-radius: 4px;
+        width: 100%;
+        &:hover {
+          background: var(--color-bg-lightpurple);
+          color: var(--color-purple);
+        }
+      }
+    }
+  }
+  &::before {
+    display: none;
+  }
+  &::after {
+    display: none;
+  }
+}

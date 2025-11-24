@@ -1,0 +1,35 @@
+.p-paginator {
+    background: none;
+    gap: 10px !important;
+    padding: 30px 0 0 0 !important;
+    justify-content: end !important;
+    .p-select {
+      display: none;
+    }
+    .p-paginator-pages {
+      gap: 8px !important;
+    }
+    .p-paginator-page,
+    .p-paginator-next,
+    .p-paginator-last,
+    .p-paginator-first,
+    .p-paginator-prev {
+      // color: hsl(var(--text_clr_black) / 0.7);
+      // line-height: 16px !important;
+      // background: var(--color-bg-white);
+      // box-shadow: var(--boxBorder_01);
+      // min-width: 30px;
+      // height: 30px;
+      // transition: var(--transition);
+      // border-radius: 6px !important;
+    }
+    .p-paginator-page.p-paginator-page-selected {
+      // background: hsl(var(--bg_clr_primary) / 0.7);
+      // transform: scale(1.2);
+    }
+
+    button.p-ripple.p-paginator-page:hover {
+      // background: hsl(var(--bg_clr_primary) / 0.4);
+      // color: hsl(var(--text_clr_white));
+    }
+  }

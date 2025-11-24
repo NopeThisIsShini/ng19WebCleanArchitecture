@@ -1,0 +1,13 @@
+<div class="card">
+    <!-- Permission Tree -->
+    <app-tree
+        #permissionTree
+        [treeData]="permissionTreeData"
+        [initialSelection]="selectedNodes"
+        selectionMode="checkbox"
+        [enableParentChildSelection]="true"
+        (selectionChange)="onSelectionChange($event)"
+        (nodeSelectionChange)="onNodeSelectionChange($event)"
+    >
+    </app-tree>
+</div>

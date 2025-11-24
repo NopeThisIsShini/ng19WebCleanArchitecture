@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Template</title>
+    <base href="./" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+    <link rel="icon" type="image/x-icon" href="assets/icons/favicon.ico" />
+
+    <style>
+        /* Base font */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background: #f5f8fa;
+        }
+
+        /* Full-screen loader container */
+        #app-loader {
+            position: fixed;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #007bff, #00b4d8);
+            z-index: 9999;
+            transition: opacity 0.3s ease;
+        }
+
+        /* Spinner animation */
+        .loader {
+            width: 60px;
+            height: 60px;
+            border: 6px solid rgba(255, 255, 255, 0.3);
+            border-top-color: #fff;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin-bottom: 16px;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Optional text under loader */
+        #app-loader span {
+            color: #fff;
+            font-weight: 500;
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        /* Hide app until ready */
+        app-root {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="app-loader">
+        <div class="loader"></div>
+        <span>Loading Template...</span>
+    </div>
+
+    <app-root></app-root>
+</body>
+
+</html>
