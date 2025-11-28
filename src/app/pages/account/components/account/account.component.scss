@@ -1,13 +1,13 @@
-@use '../../../../../assets/layout/layout.scss' as *;
+
 
 ::ng-deep {
     .tab_card {
         display: flex;
         flex-direction: column;
         height: 80vh;
-        border-radius: rem(8);
+        border-radius: 0.5rem;
         overflow: hidden !important;
-        margin-block-end: rem(20);
+        margin-block-end: 1.2rem;
 
         .p-tabmenu {
             flex-shrink: 0; // keep tab menu height fixed
@@ -21,7 +21,7 @@
         .tab-content {
             flex: 1; // take remaining space
             overflow-y: auto; // scroll only this part
-            padding: rem(20); // optional: add padding for content
+            padding: 1.2rem; // optional: add padding for content
         }
     }
 }

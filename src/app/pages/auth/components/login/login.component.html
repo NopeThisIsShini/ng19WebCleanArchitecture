@@ -37,7 +37,7 @@
                 <form [formGroup]="loginForm" class="space-y-6">
                     <!-- Email/Username Field -->
                     <div class="w-full">
-                        <app-input-text label="Enter email or userId" [mark]="true" containerClass="main_input" inputClass="main_input-class" class="my-class" formControlName="email"> </app-input-text>
+                        <app-input-text label="Enter email or userId" [mark]="true" formControlName="email"> </app-input-text>
                         <div *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.dirty" class="mt-2 text-red-500 text-[var-( --text-danger-color)]">
                             <span *ngIf="loginForm.get('email')?.errors?.['required']"> Email is required. </span>
                             <span *ngIf="loginForm.get('email')?.errors?.['pattern']"> Please enter valid email. </span>
@@ -47,7 +47,7 @@
                     <!-- Password Field -->
                     <div class="w-full">
                         <p-floatlabel variant="on">
-                            <p-password inputId="password" formControlName="password" [toggleMask]="true" styleClass="w-full" inputStyleClass="w-full" [style]="{ height: '3rem' }" [feedback]="false"> </p-password>
+                            <p-password inputId="password" formControlName="password" [toggleMask]="true" styleClass="w-full" inputStyleClass="w-full" size="large" [feedback]="false"> </p-password>
                             <label for="password">Password</label>
                         </p-floatlabel>
                         <div *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.dirty" class="mt-2 text-red-500 text-[var-( --text-danger-color)]">

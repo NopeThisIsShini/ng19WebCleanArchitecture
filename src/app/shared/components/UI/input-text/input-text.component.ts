@@ -3,11 +3,12 @@ import { Component, EventEmitter, forwardRef, Input, Output } from '@angular/cor
 import { InputTextModule } from 'primeng/inputtext';
 import { ControlValueAccessor, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { FloatLabelModule } from 'primeng/floatlabel';
+import { StyleClass } from 'primeng/styleclass';
 
 @Component({
     selector: 'app-input-text',
     standalone: true,
-    imports: [CommonModule, InputTextModule, FloatLabelModule],
+    imports: [CommonModule, InputTextModule, FloatLabelModule, StyleClass],
     templateUrl: './input-text.component.html',
     styleUrl: './input-text.component.scss',
     providers: [

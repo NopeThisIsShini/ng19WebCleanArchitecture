@@ -4,6 +4,7 @@
     "compileOnSave": false,
     "compilerOptions": {
         "outDir": "./dist/out-tsc",
+        "baseUrl": "src",
         "strict": true,
         "noImplicitOverride": true,
         "noPropertyAccessFromIndexSignature": true,
@@ -17,18 +18,11 @@
         "importHelpers": true,
         "target": "ES2022",
         "module": "ES2022",
-        "baseUrl": "src",
-        "paths": {
+         "paths": {
         "@app/*": ["app/*"],
-        "@shared/*": ["app/shared/*"],
-        "@core/*": ["app/core/*"],
-        "@assets/*": ["assets/*"],
+        "@env/*": ["environments/*"]
         },
     },
-    
-    "exclude": [
-    "node_modules"
-    ],
     "angularCompilerOptions": {
         "enableI18nLegacyMessageIdFormat": false,
         "strictInjectionParameters": true,

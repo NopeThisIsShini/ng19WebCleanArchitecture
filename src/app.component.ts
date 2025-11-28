@@ -2,9 +2,9 @@ import { Component, inject, OnInit } from '@angular/core';
 import { RouterModule, RouterOutlet } from '@angular/router';
 import { MessageService } from 'primeng/api';
 import { ToastModule } from 'primeng/toast';
-import { AppConfigurator } from './app/layout/components/app.configurator';
 import { ConfirmDialogModule } from 'primeng/confirmdialog';
-import { environment } from 'environments/environment';
+import { environment } from '@env/environment';
+import { AppConfigurator } from '@app/layout/component/app.configurator';
 
 @Component({
     selector: 'app-root',
@@ -19,7 +19,6 @@ import { environment } from 'environments/environment';
 })
 export class AppComponent implements OnInit {
     ngOnInit() {
-       console.log(environment.apiBaseUrl);
-       
+        console.log(environment.apiBaseUrl);
     }
 }
