@@ -13,3 +13,25 @@
     outline-offset: -1px;
     box-shadow: inset var(--focus-ring-shadow);
 }
+
+@mixin displayFlex($dir, $align, $justify) {
+  display: flex;
+  flex-direction: $dir;
+  align-items: $align;
+  justify-content: $justify;
+}
+
+@mixin position($p, $l, $r, $t, $b) {
+  position: $p;
+  left: $l;
+  right: $r;
+  top: $t;
+  bottom: $b;
+}
+@mixin abMidposition {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  @content;
+}

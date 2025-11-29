@@ -1,0 +1,21 @@
+       /* Container must clip the image when it scales */
+        .card-image-container {
+            overflow: hidden;
+            border-radius: 1.5rem;
+        }
+
+        .card-image {
+            transition: transform 0.5s ease;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* ONLY zoom the image, do not move the card */
+        .project-card:hover .card-image {
+            transform: scale(1.1);
+        }
+
+        .project-card {
+            transition: box-shadow 0.3s ease;
+        }

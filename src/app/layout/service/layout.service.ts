@@ -2,11 +2,11 @@ import { Injectable, effect, signal, computed } from '@angular/core';
 import { Subject } from 'rxjs';
 
 export interface layoutConfig {
-    preset?: string;
-    primary?: string;
-    surface?: string | undefined | null;
-    darkTheme?: boolean;
-    menuMode?: string;
+    preset: string;
+    primary: string;
+    surface: string;
+    darkTheme: boolean;
+    menuMode: string;
 }
 
 interface LayoutState {
@@ -26,15 +26,16 @@ interface MenuChangeEvent {
     providedIn: 'root'
 })
 export class LayoutService {
-    _config: layoutConfig = {
+    // Fixed configuration with your custom colors
+    private _config: layoutConfig = {
         preset: 'Aura',
-        primary: 'emerald',
-        surface: null,
+        primary: 'custom-blue',
+        surface: 'slate',
         darkTheme: false,
         menuMode: 'static'
     };
 
-    _state: LayoutState = {
+    private _state: LayoutState = {
         staticMenuDesktopInactive: false,
         overlayMenuActive: false,
         configSidebarVisible: false,
@@ -43,37 +44,28 @@ export class LayoutService {
     };
 
     layoutConfig = signal<layoutConfig>(this._config);
-
     layoutState = signal<LayoutState>(this._state);
 
     private configUpdate = new Subject<layoutConfig>();
-
     private overlayOpen = new Subject<any>();
-
     private menuSource = new Subject<MenuChangeEvent>();
-
     private resetSource = new Subject();
 
     menuSource$ = this.menuSource.asObservable();
-
     resetSource$ = this.resetSource.asObservable();
-
     configUpdate$ = this.configUpdate.asObservable();
-
     overlayOpen$ = this.overlayOpen.asObservable();
 
-    theme = computed(() => (this.layoutConfig()?.darkTheme ? 'light' : 'dark'));
-
+    // Computed properties
+    theme = computed(() => (this.layoutConfig()?.darkTheme ? 'dark' : 'light'));
     isSidebarActive = computed(() => this.layoutState().overlayMenuActive || this.layoutState().staticMenuMobileActive);
-
     isDarkTheme = computed(() => this.layoutConfig().darkTheme);
 
-    getPrimary = computed(() => this.layoutConfig().primary);
-
-    getSurface = computed(() => this.layoutConfig().surface);
+    // These return fixed values since we're not allowing color changes
+    getPrimary = computed(() => 'custom-blue');
+    getSurface = computed(() => 'slate');
 
     isOverlay = computed(() => this.layoutConfig().menuMode === 'overlay');
-
     transitionComplete = signal<boolean>(false);
 
     private initialized = false;
@@ -98,18 +90,88 @@ export class LayoutService {
         });
     }
 
+    /**
+     * Load initial configuration - simplified to only allow certain changes
+     */
+    loadInitialConfig(config: Partial<layoutConfig>): void {
+        // Only allow darkTheme and menuMode to be changed
+        this._config = {
+            preset: 'Aura',
+            primary: 'custom-blue',
+            surface: 'slate',
+            darkTheme: config.darkTheme ?? false,
+            menuMode: config.menuMode ?? 'static'
+        };
+        this.layoutConfig.set(this._config);
+    }
+
+    /**
+     * Get the current configuration
+     */
+    getConfig(): layoutConfig {
+        return { ...this.layoutConfig() };
+    }
+
+    /**
+     * Update only allowed configuration properties (darkTheme and menuMode)
+     */
+    updateConfig(partialConfig: Partial<layoutConfig>): void {
+        this.layoutConfig.update((current) => ({
+            ...current,
+            // Only allow these properties to be updated
+            darkTheme: partialConfig.darkTheme ?? current.darkTheme,
+            menuMode: partialConfig.menuMode ?? current.menuMode,
+            // Keep these fixed
+            preset: 'Aura',
+            primary: 'custom-blue',
+            surface: 'slate'
+        }));
+    }
+
+    /**
+     * Reset to default configuration with your custom colors
+     */
+    resetToDefault(): void {
+        const defaultConfig: layoutConfig = {
+            preset: 'Aura',
+            primary: 'custom-blue',
+            surface: 'slate',
+            darkTheme: false,
+            menuMode: 'static'
+        };
+        this.loadInitialConfig(defaultConfig);
+    }
+
+    /**
+     * Toggle only dark mode (the only theme change allowed)
+     */
+    toggleDarkMode(isDark?: boolean): void {
+        const shouldBeDark = isDark ?? !this.layoutConfig().darkTheme;
+
+        this.layoutConfig.update((current) => ({
+            ...current,
+            darkTheme: shouldBeDark
+        }));
+
+        if (shouldBeDark) {
+            document.documentElement.classList.add('app-dark');
+        } else {
+            document.documentElement.classList.remove('app-dark');
+        }
+    }
+
     private handleDarkModeTransition(config: layoutConfig): void {
         if ((document as any).startViewTransition) {
             this.startViewTransition(config);
         } else {
-            this.toggleDarkMode(config);
+            this.applyDarkMode(config);
             this.onTransitionEnd();
         }
     }
 
     private startViewTransition(config: layoutConfig): void {
         const transition = (document as any).startViewTransition(() => {
-            this.toggleDarkMode(config);
+            this.applyDarkMode(config);
         });
 
         transition.ready
@@ -119,9 +181,8 @@ export class LayoutService {
             .catch(() => {});
     }
 
-    toggleDarkMode(config?: layoutConfig): void {
-        const _config = config || this.layoutConfig();
-        if (_config.darkTheme) {
+    private applyDarkMode(config: layoutConfig): void {
+        if (config.darkTheme) {
             document.documentElement.classList.add('app-dark');
         } else {
             document.documentElement.classList.remove('app-dark');
@@ -137,7 +198,10 @@ export class LayoutService {
 
     onMenuToggle() {
         if (this.isOverlay()) {
-            this.layoutState.update((prev) => ({ ...prev, overlayMenuActive: !this.layoutState().overlayMenuActive }));
+            this.layoutState.update((prev) => ({
+                ...prev,
+                overlayMenuActive: !this.layoutState().overlayMenuActive
+            }));
 
             if (this.layoutState().overlayMenuActive) {
                 this.overlayOpen.next(null);
@@ -145,9 +209,15 @@ export class LayoutService {
         }
 
         if (this.isDesktop()) {
-            this.layoutState.update((prev) => ({ ...prev, staticMenuDesktopInactive: !this.layoutState().staticMenuDesktopInactive }));
+            this.layoutState.update((prev) => ({
+                ...prev,
+                staticMenuDesktopInactive: !this.layoutState().staticMenuDesktopInactive
+            }));
         } else {
-            this.layoutState.update((prev) => ({ ...prev, staticMenuMobileActive: !this.layoutState().staticMenuMobileActive }));
+            this.layoutState.update((prev) => ({
+                ...prev,
+                staticMenuMobileActive: !this.layoutState().staticMenuMobileActive
+            }));
 
             if (this.layoutState().staticMenuMobileActive) {
                 this.overlayOpen.next(null);
@@ -163,7 +233,7 @@ export class LayoutService {
         return !this.isDesktop();
     }
 
-    onConfigUpdate() {
+    private onConfigUpdate() {
         this._config = { ...this.layoutConfig() };
         this.configUpdate.next(this.layoutConfig());
     }

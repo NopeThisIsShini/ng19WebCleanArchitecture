@@ -1,0 +1,61 @@
+  /* Smooth fade up animation for tab content */
+        @keyframes fadeUp {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeUp 0.4s ease-out forwards;
+        }
+
+        .tab-content.active {
+            display: grid;
+        }
+
+        /* Logo styles */
+        .tech-icon {
+            filter: grayscale(100%) opacity(0.6);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+
+        /* On hover: Color + Scale + Full Opacity */
+        .tech-card:hover .tech-icon {
+            filter: grayscale(0%) opacity(1);
+            transform: scale(1.15);
+        }
+
+        /* Tab Navigation Underline Animation */
+        .tab-btn {
+            position: relative;
+        }
+
+        .tab-btn::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: #3B82F6;
+            /* Blue-500 */
+            transition: width 0.3s ease;
+            border-radius: 99px;
+        }
+
+        .tab-btn.active::after {
+            width: 100%;
+        }
+
+        .tab-btn.active {
+            color: #1D4ED8;
+            /* Blue-700 */
+            font-weight: 600;
+        }

@@ -1,0 +1,347 @@
+
+
+    <!-- Testimonials Marquee Section -->
+    <section class="py-6 px-6 lg:px-20 mx-0 my-12 lg:mx-20" id="Testimonials">
+        <div
+            class="bg-[#13072E] rounded-[2.5rem] p-6 md:p-12 lg:p-16 flex flex-col lg:flex-row gap-8 lg:gap-16 overflow-hidden h-[850px] lg:h-[700px] relative shadow-2xl ring-1 ring-white/10">
+
+            <!-- Left Content: Static -->
+            <div class="lg:w-1/3 flex flex-col justify-center z-10 shrink-0 relative">
+                <!-- Decorative element -->
+                <div
+                    class="absolute -top-20 -left-20 w-64 h-64 bg-purple-600/20 rounded-full blur-3xl pointer-events-none">
+                </div>
+
+                <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6 relative">
+                    What others<br>have said about<br><span class="text-purple-400">Multiplyy</span>
+                </h2>
+                <p class="text-slate-300 text-lg leading-relaxed relative max-w-md">
+                    Make smarter investment choices with personalized guidance from a pro. Your money will be
+                    working hard for you, not the other way around.
+                </p>
+
+                <!-- Call to action or metric could go here to fill space if needed -->
+                <div class="mt-8 flex items-center gap-4">
+                    <div class="flex -space-x-4">
+                        <img class="w-10 h-10 rounded-full border-2 border-[#13072E]"
+                            src="https://randomuser.me/api/portraits/men/32.jpg" alt="" />
+                        <img class="w-10 h-10 rounded-full border-2 border-[#13072E]"
+                            src="https://randomuser.me/api/portraits/women/44.jpg" alt="" />
+                        <img class="w-10 h-10 rounded-full border-2 border-[#13072E]"
+                            src="https://randomuser.me/api/portraits/women/65.jpg" alt="" />
+                        <div
+                            class="w-10 h-10 rounded-full border-2 border-[#13072E] bg-slate-700 flex items-center justify-center text-xs font-bold text-white">
+                            +2k</div>
+                    </div>
+                    <p class="text-slate-400 text-sm">Happy Investors</p>
+                </div>
+            </div>
+
+            <!-- Right Content: Scrolling Tracks -->
+            <!-- Added ID for easier JS selection -->
+            <div id="marquee-container"
+                class="lg:w-2/3 relative h-full flex gap-4 md:gap-6 overflow-hidden marquee-mask justify-center">
+
+                <!-- Track 1: Running UP (Contains ALL cards on mobile, Half on Desktop) -->
+                <div class="marquee-track-up flex flex-col gap-4 md:gap-6 w-full md:w-1/2">
+                    <!-- Set 1 -->
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            The platform's focus on guidance rather than direct trading is a significant advantage.
+                            It allows me to learn strategies safely.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">James Milner</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            Instrumental in building my confidence. The live Q&A sessions with experts and community
+                            forums are amazing features.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Maya Sam</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            The advisors are knowledgeable and always available. Ensuring that I feel confident in
+                            my trading decisions every day.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Yang Lee</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Only: Injected cards from Track 2 (Hidden on Desktop) -->
+                    <div class="testimonial-card md:hidden">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            I've been using for several months now, and it has exceeded my expectations in every
+                            way. This platform is perfect for expert guidance.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Sindy Sam</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card md:hidden">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            This platform is perfect for those who seek expert guidance and strategic advice without
+                            the pressure or risk of actual trading.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Michael Chen</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card md:hidden">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            The advisors are knowledgeable and always available to answer questions. It's truly a
+                            game-changer for anyone investing.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Sarah Jenkins</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Set 2 (Duplicate) -->
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            The platform's focus on guidance rather than direct trading is a significant advantage.
+                            It allows me to learn strategies safely.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">James Milner</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            Instrumental in building my confidence. The live Q&A sessions with experts and community
+                            forums are amazing features.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Maya Sam</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            The advisors are knowledgeable and always available. Ensuring that I feel confident in
+                            my trading decisions every day.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Yang Lee</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Mobile Only: Injected cards from Track 2 (Duplicate for Loop) -->
+                    <div class="testimonial-card md:hidden">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            I've been using for several months now, and it has exceeded my expectations in every
+                            way. This platform is perfect for expert guidance.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Sindy Sam</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card md:hidden">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            This platform is perfect for those who seek expert guidance and strategic advice without
+                            the pressure or risk of actual trading.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Michael Chen</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card md:hidden">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            The advisors are knowledgeable and always available to answer questions. It's truly a
+                            game-changer for anyone investing.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Sarah Jenkins</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Track 2: Running DOWN (Hidden on Mobile) -->
+                <div class="marquee-track-down hidden md:flex flex-col gap-4 md:gap-6 w-full md:w-1/2">
+                    <!-- Set 1 -->
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            I've been using for several months now, and it has exceeded my expectations in every
+                            way. This platform is perfect for expert guidance.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Sindy Sam</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            This platform is perfect for those who seek expert guidance and strategic advice without
+                            the pressure or risk of actual trading.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Michael Chen</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            The advisors are knowledgeable and always available to answer questions. It's truly a
+                            game-changer for anyone investing.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Sarah Jenkins</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <!-- Set 2 (Duplicate) -->
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            I've been using for several months now, and it has exceeded my expectations in every
+                            way. This platform is perfect for expert guidance.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/22.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Sindy Sam</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            This platform is perfect for those who seek expert guidance and strategic advice without
+                            the pressure or risk of actual trading.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/men/85.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Michael Chen</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card">
+                        <p class="text-slate-600 mb-6 leading-relaxed text-sm md:text-base">
+                            The advisors are knowledgeable and always available to answer questions. It's truly a
+                            game-changer for anyone investing.
+                        </p>
+                        <div class="flex items-center gap-3 md:gap-4">
+                            <img src="https://randomuser.me/api/portraits/women/12.jpg" alt="User"
+                                class="w-10 h-10 md:w-12 md:h-12 rounded-full object-cover ring-2 ring-slate-100">
+                            <div class="flex-1 min-w-0">
+                                <h5 class="font-bold text-slate-900 truncate">Sarah Jenkins</h5>
+                                <p class="text-xs text-slate-500">Member since 2024</p>
+                            </div>
+                            <div class="flex text-amber-400 text-sm">★★★★★</div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>

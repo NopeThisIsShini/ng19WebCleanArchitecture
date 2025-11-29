@@ -6,6 +6,7 @@ import { ConfirmDialogModule } from 'primeng/confirmdialog';
 import { environment } from '@env/environment';
 import { AppConfigurator } from '@app/layout/component/app.configurator';
 
+
 @Component({
     selector: 'app-root',
     standalone: true,
@@ -20,5 +21,6 @@ import { AppConfigurator } from '@app/layout/component/app.configurator';
 export class AppComponent implements OnInit {
     ngOnInit() {
         console.log(environment.apiBaseUrl);
+        
     }
 }

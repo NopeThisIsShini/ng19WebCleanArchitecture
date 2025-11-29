@@ -5,10 +5,10 @@ import { LOCAL_ROUTES } from '@app/utils/routes';
 import { authGuard } from '@app/utils/guard';
 
 export const appRoutes: Routes = [
-    // {
-    //     path: '',
-    //     component: Landing
-    // },
+    {
+        path: '',
+        component: Landing
+    },
     {
         path: '',
         component: AppLayout    ,

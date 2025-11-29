@@ -1,0 +1,85 @@
+<section id="tech" class="py-6 px-6 lg:px-20 mx-0  lg:mx-20 ">
+
+    <!-- Header -->
+    <div class="text-center mb-12">
+        <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">We Work On It</h4>
+        <h2 class="text-4xl md:text-5xl font-bold text-slate-800">
+            Technologies <span class="text-blue-500">We Work</span> With
+        </h2>
+    </div>
+
+    <!-- Tab Navigation -->
+    <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-12 border-b border-slate-200 pb-4 px-4">
+        <button *ngFor="let tab of tabs" (click)="openTab(tab.id)" [ngClass]="{ 'active': isActive(tab.id) }"
+            class="tab-btn text-lg text-slate-500 hover:text-blue-500 transition-colors pb-2">
+            {{ tab.label }}
+        </button>
+    </div>
+
+    <!-- Tab Content -->
+    <div class="min-h-fit">
+
+        <!-- Reuse same design for all tabs -->
+        <ng-container *ngIf="activeTab === 'mobile'">
+            <div class="tab-content active grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+                <div *ngFor="let tech of mobileTech"
+                    class="tech-card flex flex-col items-center gap-3 cursor-pointer group">
+                    <img [src]="tech.icon" class="tech-icon w-16 h-16" [alt]="tech.name" />
+                    <span>{{ tech.name }}</span>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="activeTab === 'frontend'">
+            <div class="tab-content active grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+                <div *ngFor="let tech of frontendTech"
+                    class="tech-card flex flex-col items-center gap-3 cursor-pointer group">
+                    <img [src]="tech.icon" class="tech-icon w-16 h-16" [alt]="tech.name" />
+                    <span>{{ tech.name }}</span>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="activeTab === 'backend'">
+            <div class="tab-content active grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+                <div *ngFor="let tech of backendTech"
+                    class="tech-card flex flex-col items-center gap-3 cursor-pointer group">
+                    <img [src]="tech.icon" class="tech-icon w-16 h-16" [alt]="tech.name" />
+                    <span>{{ tech.name }}</span>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="activeTab === 'database'">
+            <div class="tab-content active grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+                <div *ngFor="let tech of databaseTech"
+                    class="tech-card flex flex-col items-center gap-3 cursor-pointer group">
+                    <img [src]="tech.icon" class="tech-icon w-16 h-16" [alt]="tech.name" />
+                    <span>{{ tech.name }}</span>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="activeTab === 'cms'">
+            <div class="tab-content active grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+                <div *ngFor="let tech of cmsTech"
+                    class="tech-card flex flex-col items-center gap-3 cursor-pointer group">
+                    <img [src]="tech.icon" class="tech-icon w-16 h-16" [alt]="tech.name" />
+                    <span>{{ tech.name }}</span>
+                </div>
+            </div>
+        </ng-container>
+
+        <ng-container *ngIf="activeTab === 'devops'">
+            <div class="tab-content active grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-8 justify-items-center">
+                <div *ngFor="let tech of devopsTech"
+                    class="tech-card flex flex-col items-center gap-3 cursor-pointer group">
+                    <img [src]="tech.icon" class="tech-icon w-16 h-16" [alt]="tech.name" />
+                    <span>{{ tech.name }}</span>
+                </div>
+            </div>
+        </ng-container>
+
+    </div>
+
+</section>

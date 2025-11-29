@@ -1,0 +1,14 @@
+   .industry-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .industry-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px -5px rgba(59, 130, 246, 0.1);
+        }
+
+        /* Custom icon styling to match the reference */
+        .icon-blue {
+            stroke: #7DA5D6;
+            fill: #D8E7F7;
+        }

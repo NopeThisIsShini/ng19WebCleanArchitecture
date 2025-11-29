@@ -1,0 +1,98 @@
+<footer class="footer_section">
+    <div class="container-fluid">
+        <div class="footer_inner">
+            <div class="footer_content">
+                <div class="logo">
+                    <img src="{{ logo }}" width="213" height="36" />
+                    <p class="body2 sub_text">
+                        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                        eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
+                        ad minim veniam, quis nostrud exercitation ullamco laboris nisi u.
+                    </p>
+                    <div class="social_box">
+                        <ul class="social_icon">
+                            <li class="">
+                                <a class="link_nav" href="#">
+                                    <i class="rounded_icon text-xs">
+                                        <i class="pi pi-facebook"></i>
+                                    </i>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a class="link_nav" href="#">
+                                    <span class="rounded_icon text-xs">
+                                        <!-- <i class="pi pi-twitter"></i> -->
+                                        <img src="assets/layout/images/Twitter.png" alt="twitterImage" />
+                                    </span>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a class="link_nav" href="#">
+                                    <i class="rounded_icon text-xs">
+                                        <i class="pi pi-linkedin"></i>
+                                    </i>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a class="link_nav" href="#">
+                                    <i class="rounded_icon text-xs">
+                                        <i class="pi pi-youtube"></i>
+                                    </i>
+                                </a>
+                            </li>
+
+                            <li class="">
+                                <a class="link_nav" href="#">
+                                    <i class="rounded_icon text-xs">
+                                        <i class="pi pi-instagram"></i>
+                                    </i>
+                                </a>
+                            </li>
+                        </ul>
+                        <a href="http://localhost:4200/advisor-page" class="advisor_link">Are You an Advisor?</a>
+                    </div>
+                </div>
+                <div class="footer_grid">
+                    <div *ngFor="let menu of menuItems" class="footer_grid_item">
+                        <h3 class="footer_title text-0 font-semibold details">
+                            {{ menu.title }}
+                        </h3>
+                        <ul class="footer-menu">
+                            <li *ngFor="let item of menu.menuItems">
+                                <a class="link_nav" [href]="item.link" (click)="$event.preventDefault()">
+                                    <i class="rounded_icon text-xs">
+                                        <i class="{{ item.icon }}"></i>
+                                    </i>
+                                    {{ item.label }}
+                                </a>
+                            </li>
+                        </ul>
+                        <!-- Display icons below menu -->
+                        <!-- <div *ngIf="menu.icons" class="icon-container">
+              <a
+                *ngFor="let icon of menu.icons"
+                [href]="icon.link"
+                class="icon-link"
+              >
+                <i class="{{ icon.icon }}"></i> {{ icon.label }}
+              </a>
+            </div> -->
+                    </div>
+                </div>
+            </div>
+            <div class="footer_bottom">
+                <p class="body3">©2020 Multiplyy</p>
+                <div class="foot_nav">
+                    <a href="#" >Disclaimer</a>
+                    <a href="#" >Terms of use</a>
+                    <a href="#" >Privacy policy</a>
+                    <a href="#" >Cookie policy</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+
