@@ -1,0 +1,51 @@
+<section id="faq" class="py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20 ">
+
+    <div class="text-center mb-12">
+        <h3 class="text-sm font-semibold uppercase tracking-widest text-gray-900 mb-2">FAQ</h3>
+        <h2 class="text-3xl md:text-4xl font-bold text-red-700">Frequently Asked Questions</h2>
+        <div class="w-10 h-0.5 bg-red-400 mx-auto mt-6"></div>
+    </div>
+
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+        <div class="space-y-0 border-t border-gray-200">
+
+            <div *ngFor="let item of faqData; let i = index" class="accordion-item border-b border-gray-200">
+
+                <button (click)="toggleAccordion(i)"
+                    class="w-full py-6 flex justify-between items-center text-left focus:outline-none">
+                    <span class="text-lg font-medium text-gray-900">{{ item.question }}</span>
+
+                    <span class="icon text-red-700" [class.hidden]="openIndex !== i">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+
+                    <span class="icon text-red-700" [class.hidden]="openIndex === i">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
+                            stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                    </span>
+                </button>
+
+                <div class="accordion-content" [class.active]="openIndex === i">
+                    <p class="text-gray-500 text-sm pb-6 pr-4 leading-relaxed">
+                        {{ item.answer }}
+                    </p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="flex justify-center items-center h-full pl-0 lg:pl-10 mt-10 lg:mt-0">
+            <img src="https://cdni.iconscout.com/illustration/premium/thumb/faq-illustration-download-in-svg-png-gif-file-formats--customer-questions-interrogation-point-business-vol-1-pack-illustrations-3792018.png"
+                alt="FAQ Illustration" class="w-full max-w-md object-contain opacity-90">
+        </div>
+
+    </div>
+</section>

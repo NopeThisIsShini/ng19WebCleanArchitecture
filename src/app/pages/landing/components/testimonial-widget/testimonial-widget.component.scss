@@ -8,3 +8,10 @@
             border: 1px solid rgba(226, 232, 240, 0.8);
 
         }
+   .marquee-mask {
+                mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
+            }
+
+            .testimonial-card {
+                @apply bg-white p-6 rounded-3xl shadow-sm border border-slate-100;
+            }

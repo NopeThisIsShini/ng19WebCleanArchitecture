@@ -1,0 +1,65 @@
+<section class="relative bg-white pt-16 pb-16 lg:pb-2  px-6 mb-[-3.5rem]  lg:px-12">
+    <div class="px-6 lg:px-20 mx-0 my-12 lg:mx-20">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+
+            <!-- Left Side: Get In Touch Text -->
+            <div class="lg:pr-12 pt-4">
+                <h2 class="text-3xl font-bold text-gray-800 uppercase tracking-wider mb-6">Get in Touch</h2>
+                <p class="text-gray-500 leading-relaxed mb-10 max-w-lg">
+                    Ultricies nisi voluptatem, illo inve nimio veri adis etoi quasi architecto vitae dicta sunt
+                    explicabo nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit.
+                </p>
+
+                <div class="space-y-6 text-gray-600">
+                    <div class="flex items-center space-x-4 group">
+                        <div
+                            class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-brand-red transition-colors duration-300">
+                            <i data-lucide="mail"
+                                class="text-brand-red w-5 h-5 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-sm font-medium">redwandeviserweb.com</span>
+                    </div>
+
+                    <div class="flex items-center space-x-4 group">
+                        <div
+                            class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-brand-red transition-colors duration-300">
+                            <i data-lucide="smartphone"
+                                class="text-brand-red w-5 h-5 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-sm font-medium">01761706373</span>
+                    </div>
+
+                    <div class="flex items-center space-x-4 group">
+                        <div
+                            class="w-10 h-10 rounded-full bg-red-50 flex items-center justify-center group-hover:bg-brand-red transition-colors duration-300">
+                            <i data-lucide="map-pin"
+                                class="text-brand-red w-5 h-5 group-hover:text-white transition-colors"></i>
+                        </div>
+                        <span class="text-sm font-medium">Golden Tower 888w, Sylhet, Bangladesh</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side: The Floating Form -->
+            <!-- Adjusted negative margin (lg:-mb-52) to push form mostly into footer, with a "little" overlap upwards -->
+            <div
+                class="relative rounded-xl z-20 w-full max-w-md mx-auto lg:ml-auto lg:mr-0 lg:-mb-52 bg-white p-8 md:p-10 shadow-[0_20px_50px_rgb(14,76,109,0.5)] ">
+                <h3
+                    class="text-sm font-bold text-gray-700 uppercase tracking-widest mb-8 border-l-4 border-brand-red pl-3">
+                    Say Something</h3>
+
+                <form class="space-y-5" onsubmit="event.preventDefault();">
+                    <input type="text" placeholder="Your Name.."
+                        class="custom-input w-full p-4 text-sm text-gray-700 placeholder-gray-400 rounded-sm bg-gray-50 focus:bg-white">
+                    <input type="email" placeholder="Your Mail.."
+                        class="custom-input w-full p-4 text-sm text-gray-700 placeholder-gray-400 rounded-sm bg-gray-50 focus:bg-white">
+                    <textarea rows="4" placeholder="Message.."
+                        class="custom-input w-full p-4 text-sm text-gray-700 placeholder-gray-400 rounded-sm bg-gray-50 focus:bg-white resize-none"></textarea>
+
+                    <p-button label="Submit" icon="pi pi-send"   styleClass="w-full" [style]="{padding: '1rem', marginTop:'1rem'}" [rounded]="true" />
+                </form>
+            </div>
+
+        </div>
+    </div>
+</section>

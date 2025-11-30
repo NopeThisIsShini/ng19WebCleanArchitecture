@@ -4,7 +4,6 @@ import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
 import { ButtonModule } from 'primeng/button';
 import { DividerModule } from 'primeng/divider';
-import { FeaturesWidget } from './components/featureswidget';
 import { HighlightsWidget } from './components/highlightswidget';
 import { PricingWidget } from './components/pricingwidget';
 
@@ -17,30 +16,55 @@ import { ProjectWidget } from './components/project-widget/project-widget.compon
 import { IndustryWidget } from './components/industry-widget/industry-widget.component';
 import { TechWidget } from './components/tech-widget/tech-widget.component';
 import { TestimonialWidget } from './components/testimonial-widget/testimonial-widget.component';
+import { WhyusWidget } from './components/whyus-widget/whyus-widget.component';
+import { CustomerWidget } from './components/customer-widget/customer-widget.component';
+import { WhatWeAreWidget } from './components/what-we-are-widget/what-we-are-widget.component';
+import { ContactUsWidget } from './components/contact-us-widget/contact-us-widget.component';
+import { FaqWidget } from './components/faq-widget/faq-widget.component';
 
 @Component({
     selector: 'app-landing',
     standalone: true,
-    imports: [RouterModule, TopbarWidget, HeroWidget, FeaturesWidget, HighlightsWidget, PricingWidget, FooterWidget, RippleModule, StyleClassModule, ButtonModule, DividerModule, CommonModule, ServiceWidget, ProjectWidget, IndustryWidget, TechWidget, TestimonialWidget],
+    imports: [
+        RouterModule,
+        TopbarWidget,
+        HeroWidget,
+        FooterWidget,
+        RippleModule,
+        StyleClassModule,
+        ButtonModule,
+        DividerModule,
+        CommonModule,
+        ServiceWidget,
+        ProjectWidget,
+        IndustryWidget,
+        TechWidget,
+        TestimonialWidget,
+        WhyusWidget,
+        CustomerWidget,
+        WhatWeAreWidget,
+        ContactUsWidget,
+        FaqWidget
+    ],
     template: `
         <div class="">
-            <div
-                id="home"
-                class="landing-wrapper"
-            >
+            <div id="home" class="landing-wrapper">
                 <!-- <header > -->
                 <topbar-widget />
                 <!-- </header> -->
                 <hero-widget />
+                <what-we-are-widget />
                 <project-widget />
                 <tech-widget />
                 <service-widget />
-                <testimonial-widget />
                 <industry-widget />
-                <!-- <features-widget /> -->
-                <highlights-widget />
-                <pricing-widget />
-                <footer-widget />
+                <customer-widget />
+                <whyus-widget />
+                <testimonial-widget />
+                <faq-widget />
+
+                    <contact-us-widget />
+                    <footer-widget />
             </div>
         </div>
     `,

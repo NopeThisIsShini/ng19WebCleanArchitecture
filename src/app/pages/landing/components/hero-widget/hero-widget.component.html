@@ -1,25 +1,58 @@
+<section id="hero" class="pt-6 px-6 lg:px-20 overflow-hidden">
+<svg width="0" height="0" class="absolute">
+    <defs>
+        <clipPath id="hero-curve" clipPathUnits="objectBoundingBox">
+            <!-- A shape that curves upwards in the middle (concave arch) 
+                     Starts at top-left (0,0), goes to top-right (1,0), 
+                     down to bottom-right (1,1), 
+                     curves up towards the center (0.5, 0.85), 
+                     and ends at bottom-left (0,1). 
+                -->
+            <path d="M0,0 L1,0 L1,1 Q0.5,0.85 0,1 Z" />
+        </clipPath>
+    </defs>
+</svg>
 
-<section id="hero"
-    class="flex flex-col md:flex-row items-center md:items-start justify-between pt-6 px-6 lg:px-20 overflow-hidden"
-    
-    >
-    <!-- LEFT SIDE CONTENT -->
-    <div class="hero-text mx-6 md:mx-0 md:w-1/2 mt-0 md:mt-6">
-        <h1 class=" text-6xl font-bold text-gray-900 leading-tight">
-            <span class="font-light block">Eu sem integer</span>
-            eget magna fermentum
-        </h1>
-        <p class=" font-normal text-2xl leading-normal md:mt-4 text-gray-700">
-            Sed blandit libero volutpat sed cras. Fames ac turpis egestas integer.
-            Placerat in egestas erat...
-        </p>
-        <!-- <p-button  pRipple type="button" label="Learn More" class="!text-xl mt-8 !px-4 !mr-4"></p-button> -->
-        <button pButton  pRipple  type="button" label="Get Started" class="!text-xl mt-8 !px-4"></button>
-    </div>
+    <div
+        class="relative w-full py-24 flex items-center justify-center overflow-hidden hero-clip shadow-2xl">
 
-    <!-- RIGHT SIDE IMAGE -->
-    <div class="hero-image flex justify-center md:justify-end md:w-1/2 mt-6 md:mt-0">
-        <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=1000&auto=format&fit=crop"
-            alt="Hero Image" class="w-9/12 md:w-auto rounded-t-xl"  loading="lazy" decoding="async" />
+        <!-- Background Image -->
+        <img src="assets/images/world.svg" alt="Digital World" class="absolute inset-0 w-full h-full object-cover">
+
+        <!-- Overlay for tech-style visibility -->
+        <div class="absolute inset-0 bg-[#0E4C6D]/50"></div>
+        <div
+            class="absolute inset-0 bg-gradient-to-tr from-[#0689DA]/60 via-[#0E4C6D]/40 to-transparent mix-blend-multiply">
+        </div>
+        <div class="absolute inset-0 shadow-[inset_0_0_100px_rgba(0,0,0,0.4)] pointer-events-none"></div>
+
+        <!-- Text Content -->
+        <div class="relative z-10 text-center px-4 lg:px-0">
+            <h1 class="text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[1.1] mb-8 text-white">
+                <span class="bg-gradient-to-r from-[#0E4C6D] to-[#0689DA] bg-clip-text text-transparent">
+                    Empowering
+                </span> your vision<br />
+                With <span class="bg-gradient-to-r from-[#0689DA] to-[#0E4C6D] bg-clip-text text-transparent">
+                    digital precision
+                </span>
+            </h1>
+
+            <p class="text-gray-200 text-lg md:text-xl mb-8 max-w-2xl mx-auto">
+                We build scalable software solutions with innovation, integrity and speed.
+                From idea to deployment — we turn your vision into powerful digital experiences.
+            </p>
+
+            <!-- Buttons -->
+            <div class="flex gap-4 justify-center">
+                <button
+                    class="bg-[#0689DA] text-white px-8 py-3 rounded-lg text-sm font-bold hover:bg-[#0E4C6D] transition shadow-md">
+                    Get Free Consultation
+                </button>
+                <button
+                    class="border border-white/30 text-white px-8 py-3 rounded-lg text-sm font-bold hover:bg-white hover:text-[#0E4C6D] transition">
+                    Our Services
+                </button>
+            </div>
+        </div>
     </div>
 </section>

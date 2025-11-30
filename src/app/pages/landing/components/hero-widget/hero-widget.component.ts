@@ -22,7 +22,7 @@ export class HeroWidget implements AfterViewInit, OnDestroy {
           opacity: 0,
             delay: 0.8,
             duration: 0.8,
-            stagger: 0.2,
+            stagger: 0.4,
             ease: 'power3.out'
         }).from(
             '.hero-image',
@@ -33,7 +33,8 @@ export class HeroWidget implements AfterViewInit, OnDestroy {
                 ease: 'power3.out'
             },
             '-=0.6'
-        );
+      );
+      
     }, this.el.nativeElement);
 
   }

@@ -1,22 +1,26 @@
 <div id="features" class="py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20 ">
 
-        <div class="p-2 md:p-20"
-            style="border-radius: 20px; background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #9ec9e6e0 0%, #c3dcfa2d 100%)">
-            <div class="col-span-12 text-center mb-6">
-                <div class="text-surface-900 dark:text-surface-0 font-normal mb-2 text-4xl">Our Services</div>
-                <span class="text-muted-color text-2xl">Placerat in egestas erat...</span>
-            </div>
-            <div class="container mx-auto">
-                @for(card of services; track $index){
-                <div class="card ">
-                    <div class="card-header">
-                        <div class="service-icon"><i class="fa-solid {{card.icon}}"></i></div>
-                    </div>
-                    <h3>{{card.title}}</h3>
-                    <p>{{card.desc}}</p>
-                </div>
-                }
-            </div>
+    <div class="p-2 md:p-20"
+        style="border-radius: 20px; background: linear-gradient(0deg, rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)), radial-gradient(77.36% 256.97% at 77.36% 57.52%, #9ec9e6e0 0%, #c3dcfa2d 100%)">
+        <div class="col-span-12 text-center mb-6">
+            <div class="text-surface-900 dark:text-surface-0 font-normal mb-2 text-4xl">Our Services</div>
+            <span class="text-muted-color text-2xl">Placerat in egestas erat...</span>
         </div>
+        <div class="container mx-auto">
+            @for(card of services; track $index){
+            <div class="card"
+              pAnimateOnScroll
+            enterClass="animate-enter fade-in-10 slide-in-from-l-8 animate-duration-1000"
+            leaveClass="animate-leave fade-out-0"
+            >
+                <div class="card-header">
+                    <div class="service-icon"><i class="fa-solid {{card.icon}}"></i></div>
+                </div>
+                <h3>{{card.title}}</h3>
+                <p>{{card.desc}}</p>
+            </div>
+            }
+        </div>
+    </div>
 
 </div>
