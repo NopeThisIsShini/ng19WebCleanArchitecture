@@ -3,6 +3,7 @@ import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { AnimateOnScrollModule } from 'primeng/animateonscroll';
 // Declare gsap globally to avoid import errors since we are loading it via CDN
 import { gsap } from 'gsap';
+import { Button } from "primeng/button";
 
 interface Testimonial {
     name: string;
@@ -15,142 +16,47 @@ interface Testimonial {
 @Component({
     selector: 'testimonial-widget',
     standalone: true,
-    imports: [CommonModule, AnimateOnScrollModule],
+    imports: [CommonModule, AnimateOnScrollModule, Button],
     templateUrl: './testimonial-widget.component.html',
-    styleUrls: ['./testimonial-widget.component.scss'],
+    styleUrls: ['./testimonial-widget.component.scss']
 })
-export class TestimonialWidget implements AfterViewInit, OnDestroy {
-    // Using 'any' type because GSAP is loaded dynamically
-    private ctx!: any;
-    private tweenUp: any | null = null;
-    private tweenDown: any | null = null;
-    isBrowser: boolean;
-
-
-    testimonials: Testimonial[] = [
+export class TestimonialWidget {
+    testimonials = [
         {
-            name: 'James Milner',
-            role: 'Member since 2024',
-            content: "The platform's focus on guidance rather than direct trading is a significant advantage. It allows me to learn strategies safely.",
-            image: 'https://randomuser.me/api/portraits/men/32.jpg',
-            stars: 5
+            text: `"Before TandaTech, aligning our team took hours of back-and-forth meetings. Now, tasks, updates, and timelines live in one place — helping us focus purely on execution."`,
+            name: 'Alex Carter',
+            role: 'CEO, Skyline Apps',
+            avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Alex&backgroundColor=c0aede'
         },
         {
-            name: 'Maya Sam',
-            role: 'Member since 2024',
-            content: 'Instrumental in building my confidence. The live Q&A sessions with experts and community forums are amazing features.',
-            image: 'https://randomuser.me/api/portraits/women/44.jpg',
-            stars: 5
+            text: `"Integrating TandaTech solutions into our workflow showed instant improvements in communication and task visibility. It blends seamlessly with our existing tools."`,
+            name: 'Mia Davis',
+            role: 'Creative Director, PixelPerfect',
+            avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Mia&backgroundColor=ffdfbf'
         },
         {
-            name: 'Yang Lee',
-            role: 'Member since 2024',
-            content: 'The advisors are knowledgeable and always available. Ensuring that I feel confident in my trading decisions every day.',
-            image: 'https://randomuser.me/api/portraits/women/65.jpg',
-            stars: 5
+            text: `"TandaTech gave us the clarity we needed across all projects. Its clean interface keeps our team aligned and efficient. It's now a core part of our operations."`,
+            name: 'Sarah Brown',
+            role: 'Operations Lead, TechNova',
+            avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Sarah&backgroundColor=b6e3f4'
         },
         {
-            name: 'Sindy Sam',
-            role: 'Member since 2024',
-            content: "I've been using for several months now, and it has exceeded my expectations in every way. This platform is perfect for expert guidance.",
-            image: 'https://randomuser.me/api/portraits/women/22.jpg',
-            stars: 5
+            text: `"What we love most is how effortlessly TandaTech integrates with our tools. No more switching tabs — our productivity has doubled."`,
+            name: 'Jessica Williams',
+            role: 'Senior Project Manager, BrightTech',
+            avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Jessica&backgroundColor=ffdfbf'
         },
         {
-            name: 'Michael Chen',
-            role: 'Member since 2024',
-            content: 'This platform is perfect for those who seek expert guidance and strategic advice without the pressure or risk of actual trading.',
-            image: 'https://randomuser.me/api/portraits/men/85.jpg',
-            stars: 5
+            text: `"TandaTech transformed our workflow. Collaboration is smoother, meetings are shorter, and project turnaround times are noticeably faster."`,
+            name: 'David Smith',
+            role: 'Operations Lead, InnoWorks',
+            avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=David&backgroundColor=d1d4f9'
         },
         {
-            name: 'Sarah Jenkins',
-            role: 'Member since 2024',
-            content: "The advisors are knowledgeable and always available to answer questions. It's truly a game-changer for anyone investing.",
-            image: 'https://randomuser.me/api/portraits/women/12.jpg',
-            stars: 5
+            text: `"Adopting TandaTech was a game-changer. Real-time updates and automation helped us speed up our marketing processes by 30%."`,
+            name: 'Ryan Johnson',
+            role: 'Product Manager, NextGen Solutions',
+            avatar: 'https://api.dicebear.com/9.x/avataaars/svg?seed=Ryan&backgroundColor=ffd5dc'
         }
     ];
-
-    get column1() {
-        return this.testimonials.slice(0, 3);
-    }
-    get column2() {
-        return this.testimonials.slice(3, 6);
-    }
-
-    constructor(
-        private el: ElementRef,
-        @Inject(PLATFORM_ID) private platformId: Object
-    ) {
-        this.isBrowser = isPlatformBrowser(this.platformId);
-    }
-
-    ngAfterViewInit(): void {
-        if (!this.isBrowser) return;
-
-       this.initAnimations();
-    }
-
-
-    private initAnimations() {
-        this.ctx = gsap.context(() => {
-            const marqueeContainer = this.el.nativeElement.querySelector('#marquee-container');
-            const trackUp = this.el.nativeElement.querySelector('.marquee-track-up');
-            const trackDown = this.el.nativeElement.querySelector('.marquee-track-down');
-
-            const isMobile = window.innerWidth < 768;
-            const durationUp = isMobile ? 80 : 50;
-            const durationDown = 50;
-
-            // Track 1: Upward
-            if (trackUp) {
-                this.tweenUp = gsap.to(trackUp, {
-                    yPercent: -50,
-                    delay: 0.6,
-                    ease: 'power1.out',
-                    duration: durationUp,
-                    repeat: -1
-                });
-            }
-
-            // Track 2: Downward (Desktop only)
-            if (trackDown && !isMobile) {
-                this.tweenDown = gsap.fromTo(
-                    trackDown,
-                    { yPercent: -50 },
-                    {
-                        yPercent: 0,
-                        delay: 0.9,
-                        ease: 'power1.out',
-                        duration: durationDown,
-                        repeat: -1
-                    }
-                );
-            }
-
-            // Hover Pause
-            if (marqueeContainer) {
-                marqueeContainer.addEventListener('mouseenter', () => this.pauseMarquee(true));
-                marqueeContainer.addEventListener('mouseleave', () => this.pauseMarquee(false));
-            }
-        }, this.el.nativeElement);
-    }
-
-    private pauseMarquee(isPaused: boolean) {
-
-        const timeScale = isPaused ? 0 : 1;
-        const duration = 0.5;
-
-        if (this.tweenUp) {
-            gsap.to(this.tweenUp, { timeScale: timeScale, duration: duration, overwrite: true });
-        }
-        if (this.tweenDown) {
-            gsap.to(this.tweenDown, { timeScale: timeScale, duration: duration, overwrite: true });
-        }
-    }
-
-    ngOnDestroy(): void {
-        if (this.ctx) this.ctx.revert();
-    }
 }

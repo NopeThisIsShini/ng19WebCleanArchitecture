@@ -1,40 +1,30 @@
 <section id="faq" class="py-6 px-6 lg:px-20 mt-8 mx-0 lg:mx-20 ">
 
     <div class="text-center mb-12">
-        <h3 class="text-sm font-semibold uppercase tracking-widest text-gray-900 mb-2">FAQ</h3>
-        <h2 class="text-3xl md:text-4xl font-bold text-red-700">Frequently Asked Questions</h2>
-        <div class="w-10 h-0.5 bg-red-400 mx-auto mt-6"></div>
+        <h1 class="text-4xl md:text-5xl font-bold tracking-tight"><span class="bg-gradient-to-r from-[#0689DA] to-[#0E4C6D] bg-clip-text text-transparent">Frequently</span> Asked Questions</h1>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
 
-        <div class="space-y-0 border-t border-gray-200">
+        <div class="space-y-0">
 
-            <div *ngFor="let item of faqData; let i = index" class="accordion-item border-b border-gray-200">
+            <div *ngFor="let item of faqData; let i = index" class="accordion-item ">
 
                 <button (click)="toggleAccordion(i)"
-                    class="w-full py-6 flex justify-between items-center text-left focus:outline-none">
-                    <span class="text-lg font-medium text-gray-900">{{ item.question }}</span>
+                    class="w-full py-6 flex justify-between rounded-xl  items-center text-left focus:outline-none">
+                    <span class="text-lg font-medium bg-gradient-to-r from-[#0689DA] to-[#0E4C6D] bg-clip-text text-transparent">{{ item.question }}</span>
 
-                    <span class="icon text-red-700" [class.hidden]="openIndex !== i">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    <span class="icon text-[var(--primary-color)]" [class.hidden]="openIndex !== i">
+                        <i class="pi pi-minus"></i>
                     </span>
 
-                    <span class="icon text-red-700" [class.hidden]="openIndex === i">
-                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24"
-                            stroke="currentColor">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-                                d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                        </svg>
+                    <span class="icon text-[var(--primary-color)]" [class.hidden]="openIndex === i">
+                        <i class="pi pi-plus"></i>
                     </span>
                 </button>
 
                 <div class="accordion-content" [class.active]="openIndex === i">
-                    <p class="text-gray-500 text-sm pb-6 pr-4 leading-relaxed">
+                    <p class=" text-sm pb-6 pr-4 leading-relaxed">
                         {{ item.answer }}
                     </p>
                 </div>
@@ -43,8 +33,50 @@
         </div>
 
         <div class="flex justify-center items-center h-full pl-0 lg:pl-10 mt-10 lg:mt-0">
-            <img src="https://cdni.iconscout.com/illustration/premium/thumb/faq-illustration-download-in-svg-png-gif-file-formats--customer-questions-interrogation-point-business-vol-1-pack-illustrations-3792018.png"
-                alt="FAQ Illustration" class="w-full max-w-md object-contain opacity-90">
+            <svg height="512" viewBox="0 0 32 32" width="512" class="w-full max-w-md object-contain opacity-90" xmlns="http://www.w3.org/2000/svg"
+                xmlns:xlink="http://www.w3.org/1999/xlink" id="fi_6067225">
+                <linearGradient id="lg1">
+                    <stop offset="0" stop-color="#42a5f5"></stop>
+                    <stop offset="1" stop-color="#1e88e5"></stop>
+                </linearGradient>
+                <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="1" x2="21" xlink:href="#lg1" y1="11" y2="11">
+                </linearGradient>
+                <linearGradient id="lg2">
+                    <stop offset="0" stop-color="#bbdefb"></stop>
+                    <stop offset="1" stop-color="#64b5f6"></stop>
+                </linearGradient>
+                <linearGradient id="SVGID_2_" gradientUnits="userSpaceOnUse" x1="10" x2="12" xlink:href="#lg2" y1="14" y2="14">
+                </linearGradient>
+                <linearGradient id="SVGID_3_" gradientUnits="userSpaceOnUse" x1="8" x2="14" xlink:href="#lg2" y1="8.5" y2="8.5">
+                </linearGradient>
+                <linearGradient id="SVGID_4_" gradientUnits="userSpaceOnUse" x1="11" x2="31" xlink:href="#lg2" y1="21" y2="21">
+                </linearGradient>
+                <linearGradient id="SVGID_5_" gradientUnits="userSpaceOnUse" x1="17" x2="25" xlink:href="#lg1" y1="21" y2="21">
+                </linearGradient>
+                <g id="faq">
+                    <g>
+                        <path
+                            d="m2.5092773 16.2734375c-.9892578-1.5859375-1.5092773-3.3974609-1.5092773-5.2734375 0-5.5136719 4.4858398-10 10-10s10 4.4863281 10 10-4.4858398 10-10 10c-1.8754883 0-3.6870117-.5205078-5.2729492-1.5087891l-3.3330078 1.4277344c-.1274414.0546875-.2612305.0810547-.394043.0810547-.2597656 0-.515625-.1015625-.7070313-.2929688-.2890625-.2890625-.3730469-.7255859-.2119141-1.1005859z"
+                            fill="url(#SVGID_1_)"></path>
+                        <g>
+                            <circle cx="11" cy="14" fill="url(#SVGID_2_)" r="1"></circle>
+                        </g>
+                        <g>
+                            <path
+                                d="m11 12c-.5522461 0-1-.4472656-1-1 0-.9316406.7026367-1.4287109 1.1679688-1.7578125.5620117-.3974609.8320312-.6162109.8320312-1.2421875 0-.5517578-.4487305-1-1-1s-1 .4482422-1 1c0 .5527344-.4477539 1-1 1s-1-.4472656-1-1c0-1.6542969 1.3457031-3 3-3s3 1.3457031 3 3c0 1.6894531-1.050293 2.4316406-1.6772461 2.875-.1108398.078125-.2543945.1806641-.3300781.2480469-.0610352.4941406-.4819336.8769531-.9926758.8769531z"
+                                fill="url(#SVGID_3_)"></path>
+                        </g>
+                        <path
+                            d="m29.4907227 26.2734375c.9892578-1.5859375 1.5092773-3.3974609 1.5092773-5.2734375 0-5.5136719-4.4858398-10-10-10s-10 4.4863281-10 10 4.4858398 10 10 10c1.8754883 0 3.6870117-.5205078 5.2729492-1.5087891l3.3330078 1.4277344c.1274414.0546875.2612305.0810547.394043.0810547.2597656 0 .515625-.1015625.7070313-.2929688.2890625-.2890625.3730469-.7255859.2119141-1.1005859z"
+                            fill="url(#SVGID_4_)"></path>
+                        <g>
+                            <path
+                                d="m20 24c-.2558594 0-.5117188-.0976563-.7070313-.2929688l-2-2c-.390625-.390625-.390625-1.0234375 0-1.4140625s1.0234375-.390625 1.4140625 0l1.2929688 1.2929688 3.2929688-3.2929688c.390625-.390625 1.0234375-.390625 1.4140625 0s.390625 1.0234375 0 1.4140625l-4 4c-.1953125.1953126-.4511719.2929688-.7070313.2929688z"
+                                fill="url(#SVGID_5_)"></path>
+                        </g>
+                    </g>
+                </g>
+            </svg>
         </div>
 
     </div>

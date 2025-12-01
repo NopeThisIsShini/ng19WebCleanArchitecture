@@ -1,17 +1,3 @@
-  /* Testimonial Section Styles */
-        .testimonial-card {
-            background: white;
-            border-radius: 1.25rem;
-            /* Slightly tighter radius for cleaner look */
-            padding: 1.5rem;
-            flex-shrink: 0;
-            border: 1px solid rgba(226, 232, 240, 0.8);
-
-        }
-   .marquee-mask {
-                mask-image: linear-gradient(to bottom, transparent 0%, black 10%, black 90%, transparent 100%);
-            }
-
-            .testimonial-card {
-                @apply bg-white p-6 rounded-3xl shadow-sm border border-slate-100;
-            }
+.testimonial_card{
+    box-shadow: var(--primary-shadow);
+}

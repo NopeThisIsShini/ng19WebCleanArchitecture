@@ -31,12 +31,10 @@
 
         /* The Main Service Icon */
         .service-icon {
-            font-size: 28px;
             color: #2bbae4;
-            /* The specific cyan blue from the image */
             background: #eaf9fe;
-            width: 60px;
-            height: 60px;
+            width: 4rem;
+            height: 4rem;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -48,11 +46,8 @@
         /* 6. The "Perfect" Hover Animation */
         .card:hover {
             transform: translateY(-10px);
-            /* Lifts the card up */
             box-shadow: 0 15px 35px rgba(43, 186, 228, 0.15);
-            /* Soft blue glow shadow */
             border-color: rgba(43, 186, 228, 0.1);
-            /* Subtle border reveal */
         }
 
         /* Hover effect on the main icon */
@@ -60,11 +55,4 @@
             background: #2bbae4;
             color: #fff;
             transform: scale(1.05);
-        }
-
-        /* Hover effect on the arrow (moves up and right) */
-        .card:hover .arrow-icon {
-            transform: translate(3px, -3px);
-            color: #2bbae4;
-            opacity: 1;
         }

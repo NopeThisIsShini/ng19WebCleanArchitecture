@@ -2,16 +2,15 @@
 
     <!-- Header -->
     <div class="text-center mb-12">
-        <h4 class="text-sm font-bold text-slate-400 uppercase tracking-widest mb-2">We Work On It</h4>
-        <h2 class="text-4xl md:text-5xl font-bold text-slate-800">
-            Technologies <span class="text-blue-500">We Work</span> With
+        <h2 class="text-4xl md:text-5xl font-bold">
+            Technologies <span class="bg-gradient-to-r from-[#0689DA] to-[#0E4C6D] bg-clip-text text-transparent">We Work</span> With
         </h2>
     </div>
 
     <!-- Tab Navigation -->
-    <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-12 border-b border-slate-200 pb-4 px-4">
-        <button *ngFor="let tab of tabs" (click)="openTab(tab.id)" [ngClass]="{ 'active': isActive(tab.id) }"
-            class="tab-btn text-lg text-slate-500 hover:text-blue-500 transition-colors pb-2">
+    <div class="flex flex-wrap justify-center gap-6 md:gap-10 mb-12 border-b  pb-4 px-4">
+        <button *ngFor="let tab of tabs" (click)="openTab(tab.id)" [ngClass]="{ 'bg-gradient-to-r from-[#0689DA] to-[#0E4C6D] bg-clip-text text-transparent active': isActive(tab.id) }"
+            class="tab-btn text-lg text-slate-500  transition-colors pb-2">
             {{ tab.label }}
         </button>
     </div>

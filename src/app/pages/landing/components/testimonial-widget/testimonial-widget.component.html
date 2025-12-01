@@ -13,8 +13,8 @@
                 Testimonials
             </span>
 
-            <h1 class="text-4xl md:text-5xl font-bold text-slate-900 tracking-tight">
-                Trusted by Teams
+            <h1 class="text-4xl md:text-5xl font-bold tracking-tight">
+                Trusted by <span class="bg-gradient-to-r from-[#0689DA] to-[#0E4C6D] bg-clip-text text-transparent">Teams</span> Worldwide
             </h1>
 
             <p class="text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto">
@@ -25,137 +25,37 @@
 
         <!-- Masonry Grid Layout -->
         <div class="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6">
-
-            <!-- Card 1 -->
-            <div
-              pAnimateOnScroll
-            enterClass="animate-enter fade-in-10 animate-duration-1000"
-            leaveClass="animate-leave fade-out-0"
-            class="break-inside-avoid fade-in-up card-delay-1">
+        
+            <div *ngFor="let item of testimonials; let i = index" class="break-inside-avoid fade-in-up"
+                [ngClass]="'card-delay-' + (i + 1)">
                 <div
-                    class="bg-white p-8 rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow duration-300 border border-slate-100 h-full">
+                 pAnimateOnScroll enterClass="animate-enter fade-in-10 zoom-in-75 animate-duration-1000"
+                    class="bg-[var(--surface-card)] testimonial-card p-5 md:p-8 rounded-2xl w-full flex flex-col justify-center transition-transform duration-300 hover:-translate-y-1">
+        
                     <p class="text-slate-700 leading-relaxed mb-6">
-                        "Before Kaizen, we spent hours in meetings just to get everyone on the same page. Now, tasks,
-                        discussions, and deadlines are all in one place, so we can focus on delivering results."
+                        {{ item.text }}
                     </p>
+        
                     <div class="flex items-center gap-4">
-                        <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Alex&backgroundColor=c0aede"
-                            alt="Alex Carter" class="w-12 h-12 rounded-full object-cover bg-slate-100">
+                        <img [src]="item.avatar" [alt]="item.name" class="w-12 h-12 rounded-full object-cover bg-slate-100">
+        
                         <div>
-                            <h4 class="text-sm font-bold text-slate-900">Alex Carter</h4>
-                            <p class="text-xs text-slate-500 font-medium">CEO, Skyline Apps</p>
+                            <h4 class="text-sm font-bold text-slate-900">{{ item.name }}</h4>
+                            <p class="text-xs text-slate-500 font-medium">{{ item.role }}</p>
                         </div>
                     </div>
+        
                 </div>
             </div>
-
-            <!-- Card 2 -->
-            <div class="break-inside-avoid fade-in-up card-delay-2">
-                <div
-                    class="bg-white p-8 rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow duration-300 border border-slate-100 h-full">
-                    <p class="text-slate-700 leading-relaxed mb-6">
-                        "We've integrated Kaizen into our daily operations and noticed immediate improvements in task
-                        tracking and communication. It's straightforward, reliable, and fits perfectly into our existing
-                        toolset."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Mia&backgroundColor=ffdfbf"
-                            alt="Mia Davis" class="w-12 h-12 rounded-full object-cover bg-slate-100">
-                        <div>
-                            <h4 class="text-sm font-bold text-slate-900">Mia Davis</h4>
-                            <p class="text-xs text-slate-500 font-medium">Creative Director, PixelPerfect</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 3 -->
-            <div class="break-inside-avoid fade-in-up card-delay-3">
-                <div
-                    class="bg-white p-8 rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow duration-300 border border-slate-100 h-full">
-                    <p class="text-slate-700 leading-relaxed mb-6">
-                        "Kaizen has boosted our productivity and given us a clear overview of ongoing projects. Its
-                        user-friendly design keeps our team aligned and efficient, making it an indispensable tool in
-                        our workflow."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Sarah&backgroundColor=b6e3f4"
-                            alt="Sarah Brown" class="w-12 h-12 rounded-full object-cover bg-slate-100">
-                        <div>
-                            <h4 class="text-sm font-bold text-slate-900">Sarah Brown</h4>
-                            <p class="text-xs text-slate-500 font-medium">Operations Lead, TechNova</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 4 -->
-            <div class="break-inside-avoid fade-in-up card-delay-4">
-                <div
-                    class="bg-white p-8 rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow duration-300 border border-slate-100 h-full">
-                    <p class="text-slate-700 leading-relaxed mb-6">
-                        "We love how Kaizen integrates seamlessly with our existing tools, saving us from constantly
-                        switching platforms. Our entire team is more focused and productive."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Jessica&backgroundColor=ffdfbf"
-                            alt="Jessica Williams" class="w-12 h-12 rounded-full object-cover bg-slate-100">
-                        <div>
-                            <h4 class="text-sm font-bold text-slate-900">Jessica Williams</h4>
-                            <p class="text-xs text-slate-500 font-medium">Senior Project Manager, BrightTech</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 5 (Longer content) -->
-            <div class="break-inside-avoid fade-in-up card-delay-5">
-                <div
-                    class="bg-white p-8 rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow duration-300 border border-slate-100 h-full">
-                    <p class="text-slate-700 leading-relaxed mb-6">
-                        "Using Kaizen has truly revolutionized our workflow. The platform's intuitive design and robust
-                        features have enabled us to streamline collaboration, cut down on endless meetings, and
-                        ultimately boost our project turnaround times. Our team is more connected and motivated than
-                        ever."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=David&backgroundColor=d1d4f9"
-                            alt="David Smith" class="w-12 h-12 rounded-full object-cover bg-slate-100">
-                        <div>
-                            <h4 class="text-sm font-bold text-slate-900">David Smith</h4>
-                            <p class="text-xs text-slate-500 font-medium">Operations Lead, InnoWorks</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Card 6 -->
-            <div class="break-inside-avoid fade-in-up card-delay-6">
-                <div
-                    class="bg-white p-8 rounded-2xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] hover:shadow-lg transition-shadow duration-300 border border-slate-100 h-full">
-                    <p class="text-slate-700 leading-relaxed mb-6">
-                        "Adopting Kaizen was a game-changer for our marketing department. The real-time collaboration
-                        and automated reminders helped us cut project timelines by 30%."
-                    </p>
-                    <div class="flex items-center gap-4">
-                        <img src="https://api.dicebear.com/9.x/avataaars/svg?seed=Ryan&backgroundColor=ffd5dc"
-                            alt="Ryan Johnson" class="w-12 h-12 rounded-full object-cover bg-slate-100">
-                        <div>
-                            <h4 class="text-sm font-bold text-slate-900">Ryan Johnson</h4>
-                            <p class="text-xs text-slate-500 font-medium">Product Manager, NextGen Solutions</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
+        
         </div>
+
 
         <!-- Button Section -->
         <div class="mt-16 text-center">
-            <button
-                class="bg-indigo-600 hover:bg-indigo-700 text-white font-medium py-3 px-8 rounded-full transition-all duration-300 shadow-lg hover:shadow-indigo-500/30 transform hover:-translate-y-0.5">
-                Show more
-            </button>
+          <p-button label="Read More Testimonials" icon="pi pi-arrow-right"
+            
+            [style]="{ padding: '1rem 2rem' }" [rounded]="true"></p-button>
         </div>
 
     </div>

@@ -1,61 +1,78 @@
-  /* Smooth fade up animation for tab content */
-        @keyframes fadeUp {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
+.tab-content {
+    display: none;
+    animation: fadeUp 0.4s ease-out forwards;
+}
 
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+.tab-content.active {
+    display: grid;
+}
 
-        .tab-content {
-            display: none;
-            animation: fadeUp 0.4s ease-out forwards;
-        }
+/* Smooth icon hover */
+.tech-icon {
+    filter: grayscale(100%) opacity(0.6);
+    transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateY(0);
+}
 
-        .tab-content.active {
-            display: grid;
-        }
+.tech-card {
+    transition: transform 0.35s ease, box-shadow 0.35s ease;
+}
 
-        /* Logo styles */
-        .tech-icon {
-            filter: grayscale(100%) opacity(0.6);
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
+.tech-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
 
-        /* On hover: Color + Scale + Full Opacity */
-        .tech-card:hover .tech-icon {
-            filter: grayscale(0%) opacity(1);
-            transform: scale(1.15);
-        }
+.tech-card:hover .tech-icon {
+    filter: grayscale(0%) opacity(1);
+    transform: scale(1.15) translateY(-2px);
+}
 
-        /* Tab Navigation Underline Animation */
-        .tab-btn {
-            position: relative;
-        }
+/* Tab button transitions */
+.tab-btn {
+    position: relative;
+    transition: all 0.3s ease;
+}
 
-        .tab-btn::after {
-            content: '';
-            position: absolute;
-            bottom: -2px;
-            left: 0;
-            width: 0%;
-            height: 3px;
-            background-color: #3B82F6;
-            /* Blue-500 */
-            transition: width 0.3s ease;
-            border-radius: 99px;
-        }
+.tab-btn::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: var(--primary-gradient);
+    transition: width 0.35s ease;
+    border-radius: 99px;
+}
 
-        .tab-btn.active::after {
-            width: 100%;
-        }
+.tab-btn.active::after {
+    width: 100%;
+}
 
-        .tab-btn.active {
-            color: #1D4ED8;
-            /* Blue-700 */
-            font-weight: 600;
-        }
+/* Smooth hover effect */
+.tab-btn:hover {
+    background: var(--primary-gradient);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+.tab-btn.active {
+    font-weight: 600;
+}
+
+/* Fade-up animation */
+@keyframes fadeUp {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

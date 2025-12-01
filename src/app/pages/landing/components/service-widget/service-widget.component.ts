@@ -16,34 +16,34 @@ export class ServiceWidget implements AfterViewInit, OnDestroy {
 
     services = [
         {
-            icon: 'fa-code',
+            icon: 'pi pi-code',
             title: 'Website Development',
-            desc: 'We deliver exceptional design and web-based products ensuring security, reliability and optimal performance.'
+            desc: 'We build secure, scalable and high-performance websites tailored to elevate your digital presence.'
         },
         {
-            icon: 'fa-mobile-screen',
+            icon: 'pi pi-mobile',
             title: 'Mobile App Development',
-            desc: 'Kick-start your digital transformation with our top-notch app development service and go the extra mile.'
+            desc: 'Transform your ideas into powerful mobile apps with seamless performance and intuitive user experience.'
         },
         {
-            icon: 'fa-cart-shopping',
-            title: 'E-commerce',
-            desc: 'We create unique and flexible online shopping experiences.'
+            icon: 'pi pi-shopping-cart',
+            title: 'E-commerce Solutions',
+            desc: 'We develop flexible, conversion-focused e-commerce platforms designed to grow your online business.'
         },
         {
-            icon: 'fa-robot',
-            title: 'Robotic Process Automation',
-            desc: 'We streamline workflow, making organizations profitable & enhance time efficiency.'
+            icon: 'pi pi-cog',
+            title: 'Maintenance & Support',
+            desc: 'Ensure smooth operations with our continuous monitoring, updates, and technical support services.'
         },
         {
-            icon: 'fa-brain',
-            title: 'AI Development',
-            desc: 'Our AI services enhance customer retention, streamline operations, and drive decisions.'
+            icon: 'pi pi-database',
+            title: 'AI & Automation',
+            desc: 'Enhance efficiency with intelligent AI solutions that automate workflows and empower smarter decisions.'
         },
         {
-            icon: 'fa-pen-nib',
+            icon: 'pi pi-palette',
             title: 'UI/UX Design',
-            desc: 'We create user-centric UI/UX designs that ensure intuitive, engaging, and seamless digital experiences.'
+            desc: 'We craft engaging, intuitive, and visually refined user experiences that align with your brand’s identity.'
         }
     ];
 

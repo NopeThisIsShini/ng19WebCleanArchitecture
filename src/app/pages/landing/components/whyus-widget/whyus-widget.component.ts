@@ -1,6 +1,7 @@
 import { CommonModule, isPlatformBrowser } from '@angular/common';
 import { Component, ElementRef, Inject, PLATFORM_ID, QueryList, ViewChildren } from '@angular/core';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
+import { ButtonModule } from 'primeng/button';
 
 interface StatItem {
     target: number;
@@ -11,7 +12,7 @@ interface StatItem {
 
 @Component({
     selector: 'whyus-widget',
-    imports: [CommonModule],
+    imports: [CommonModule, ButtonModule],
     templateUrl: './whyus-widget.component.html',
     styleUrl: './whyus-widget.component.scss'
 })

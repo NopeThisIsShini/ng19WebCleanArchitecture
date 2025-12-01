@@ -1,9 +1,11 @@
 /* Smooth transition for the accordion content */
 .accordion-content {
-    transition: max-height 0.3s ease-out, padding 0.3s ease;
-    max-height: 0;
     overflow: hidden;
+    max-height: 0;
+    transition: max-height 0.5s cubic-bezier(0.25, 0.1, 0.25, 1),
+                padding 0.4s ease;
 }
+
 
 /* This class is toggled by Angular */
 .accordion-content.active {
